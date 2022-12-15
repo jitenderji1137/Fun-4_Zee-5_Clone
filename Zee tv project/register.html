@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZEE5 Login Page</title>
+    <title>ZEE5 Register Page</title>
     <link rel="stylesheet" href="/hidescrolebar.css" />
     <style>
         *{
@@ -22,7 +22,6 @@
       .middle>div{
         width: 400px;
         text-align: center;
-        background-color: transparent;
       }
       .middle>div>div{
         width: 100%;
@@ -31,7 +30,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: transparent;
       }
       .middle>div>div>input{
         width: 90%;
@@ -70,26 +68,25 @@
         color: rgb(175, 179, 219);
       }
       .middle>div>div:nth-child(3){
+        background-color: white;
+        border-radius: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
       }
       .middle>div>div:nth-child(3)>div{
         height: 50px;
-        width: 50px;
         margin: 0px 10px;
-        border-radius: 50%;
+        color: rgb(255, 138, 177);
+        font-weight: bolder;
+        background-color: white;
         display: flex;
         justify-content: center;
         align-items: center;
       }
-      .middle>div>div:nth-child(6)>a{
+      .middle>div>div:nth-child(6){
         height: 60px;
         color: blueviolet;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
       }
       .middle>div>div:nth-child(8)>a{
         color: blueviolet;
@@ -117,27 +114,6 @@
         font-size: 30px;
         text-decoration: none;
       }
-      .swal-footer{
-        background-color: white;
-      }
-      .swal-text{
-        background-color: white;
-        font-weight: bolder;
-        font-size: 20px;
-      }
-      .swal-button-container{
-        background-color: white;
-      }
-      .swal-button{
-        background-color: rgb(0, 136, 255);
-      }
-      .swal-modal{
-        border-radius: 15px;
-      }
-      .swal-title{
-        color: red;
-        background-color: white;
-      }
     </style>
   </head>
   <body>
@@ -146,41 +122,23 @@
     </div>
     <main class="middle">
     <div>
-     <div>Login to FUN4</div>
-     <div>Login to continue enjoying uninterrupted video and personalised experience.</div>
+     <div>Create a new account</div>
+     <div>Create an account to continue enjoying uninterrupted video and personalised experience</div>
      <div id="imaga">
-        <div><img src="https://www.zee5.com/images/apple-social-icon-circle.svg?ver=2.52.65" alt=""></div>
-        <div><img src="https://www.zee5.com/images/google-social-icon-circle.svg?ver=2.52.65" alt=""></div>
-        <div><img src="https://www.zee5.com/images/fb-social-icon-circle.svg?ver=2.52.65" alt=""></div>
-        <div><img src="https://www.zee5.com/images/twitter-social-icon.svg?ver=2.52.65" alt=""></div>
+        <div><img src="https://www.zee5.com/images/google-social-icon-circle.svg?ver=2.52.65" alt="">Sign in</div>
      </div>
      <div><p>or</p></div>
      <div>
-        <input type="email" placeholder="Email ID" id="logininput">
+        <input type="email" placeholder="Email ID">
      </div>
-     <div><a href="/register.html">Forgot password?</a></div>
+     <div>By proceeding you agree to our Terms of Services & Privacy Policy .</div>
      <div>
-        <button onclick="logincall()">Loign</button>
+        <button>Register</button>
      </div>
-     <div>New to FUN4
-        <a href="/register.html">Register</a>
+     <div>Already registered?
+        <a href="/Login.html">Login</a>
      </div>
     </div>
     </main>
   </body>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script>
-   
-    function logincall(){
-        
-    let input = document.getElementById("logininput").value;
-    let patern = /^[^]+@[^]+\.[a-z]{2,3}$/;
-    if(input.match(patern)){
-        swal("Sucessfuly Login.");
-    }
-    else{
-        swal("Wrong information", "Please fill your correct email");
-    }
-}
-  </script>
 </html>
