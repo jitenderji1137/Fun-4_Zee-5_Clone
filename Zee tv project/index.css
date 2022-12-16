@@ -70,8 +70,11 @@ background-color: rgba(255, 222, 173, 0);
 width: 95%;
 border: 1px solid #0f0617;
 font-size: 13px;
-color: gray;
+color: rgb(255, 255, 255);
 padding-left: 10px;
+}
+#nav>div:nth-child(3)>span>input:focus{
+    outline: none;
 }
 #nav>div:nth-child(3)>span>img{
     width: 17px;
@@ -352,6 +355,9 @@ footer>div:nth-child(4){
     #nav>div:nth-child(6)>button{
         margin-top: 3px;
         height: 30px;
+    }
+    nav>div:nth-child(1)>img{
+        height: 42%;
     }
 }
 @media screen and (min-width:0px) and (max-width:700px){
