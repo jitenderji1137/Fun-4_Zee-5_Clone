@@ -41,8 +41,8 @@
       </div>
       <div>
         <span>
-          <img src="/all images/search icone.svg" />
-          <input
+          <img onclick="searchbox()" src="/all images/search icone.svg" />
+          <input onclick="searchbox()"
             type="search"
             placeholder="Search for Movies, Shows, Channels etc."
           />
@@ -55,7 +55,7 @@
         </div>
       </div>
       <div>
-        <button><a href="/Login.html">LOGIN</a></button>
+        <button id="login-logout-button"></button>
       </div>
       <div>
         <button><img src="/all images/premium-logo.png" />BUY PLAN</button>
@@ -315,4 +315,24 @@
         </div>
       </footer>
   </body>
+  <script>
+    let locallogin = localStorage.getItem("logindata");
+let buttendata = document.getElementById("login-logout-button");
+if(locallogin == null){
+    buttendata.innerText = "Login"; 
+}
+else{
+    buttendata.innerText = "Logout";
+}
+buttendata.addEventListener("click",()=>{
+   if(locallogin == null){
+    location.href = "/Login.html"
+
+}
+else{
+    localStorage.clear();
+    location.href = "/index.html";
+} 
+})
+  </script>
 </html>
