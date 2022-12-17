@@ -253,6 +253,40 @@ footer>div:nth-child(4){
     width: 600px;
     font-size: 14px;
 }
+.onerightscroll{
+    position: absolute;
+    color: white;
+    height: 300px;
+    opacity: 0;
+    width: 50px;
+    margin-left: 95%;
+    font-size: 50px;
+    background-color: #ffffff00;
+    border-radius: 100px 0px 0px 100px;
+    border: none;
+    margin-top: -300px;
+  }
+  .oneleftscroll{
+    position: absolute;
+    color: white;
+    height: 300px;
+    width: 50px;
+    opacity: 0;
+    font-size: 50px;
+    margin-top: -300px;
+    border: none;
+    border-radius: 0px 100px 100px 0px;
+    margin-left: -25px;
+    background-color: #00000000;
+  }
+  .onerightscroll:hover{
+  background-color: #ffffff4b;
+  opacity: 1;
+  }
+  .oneleftscroll:hover{
+    background-color: #ffffff4b;
+    opacity: 1;
+  }
 @media screen and (min-width:1000px) and (max-width:1350px){
     #nav>div:nth-child(3){
         visibility: hidden;
@@ -359,6 +393,9 @@ footer>div:nth-child(4){
     nav>div:nth-child(1)>img{
         height: 42%;
     }
+    .oneleftscroll{
+        margin-left: 0px;
+    }
 }
 @media screen and (min-width:0px) and (max-width:700px){
     footer>div:nth-child(4){
@@ -382,6 +419,19 @@ footer>div:nth-child(4){
     #trand > div:nth-child(1) > h1{
         font-size: 20px!important;
     }
+    .oneleftscroll{
+        height: 240px;
+        margin-top: -240px;
+    }
+    .onerightscroll{
+        height: 240px;
+        margin-top: -240px;
+    }
+    /* @media screen and (min-width:0px) and (max-width:600px){
+        .onerightscroll{
+            margin-left: 92%;
+        }
+    } */
 }
 @media screen and (min-width:0px) and (max-width:500px){
 #nav>div:nth-child(6){
@@ -419,6 +469,12 @@ footer>div:nth-child(4){
   }
   #trand>div:nth-child(2){
     height: 200px!important;
+  }
+  .oneleftscroll{
+    display: none;
+  }
+  .onerightscroll{
+    display: none;
   }
 }
 @media screen and (min-width:0px) and (max-width:350px){

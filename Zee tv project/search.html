@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FUN4 Search</title>
     <link rel="stylesheet" href="/hidescrolebar.css" />
+    <link rel="icon" type="image/x-icon" href="/FUN4 LOGO.png">
     <style>
       * {
         margin: 0;
@@ -46,12 +47,99 @@
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         gap: 20px;
-        margin-top: 10px;
+        margin: 20px;
       }
       #searchoutput > div > a > img {
         width: 100%;
         height: 250px;
         border-radius: 10px;
+      }
+      #noresulet{
+        color: white;
+      }
+      #searchoutpu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        font-size: 30px;
+      }
+      @media screen and (min-width: 1000px) and (max-width: 1250px) {
+        #searchoutput{
+          grid-template-columns: repeat(6,1fr);
+        }
+      }
+      @media screen and (min-width: 850px) and (max-width: 999px) {
+        #searchoutput{
+          grid-template-columns: repeat(5,1fr);
+        }
+      }
+      @media screen and (min-width: 750px) and (max-width: 849px) {
+        #searchoutput{
+          grid-template-columns: repeat(4,1fr);
+        }
+      }
+      @media screen and (min-width: 600px) and (max-width: 749px) {
+        #searchoutput{
+          grid-template-columns: repeat(4,1fr);
+        }
+        #searchoutput > div > a > img{
+          height: 210px;
+        }
+        #searchoutpu{
+          font-size: 25px;
+        }
+      }
+      @media screen and (min-width: 500px) and (max-width: 599px) {
+        #searchoutput{
+          grid-template-columns: repeat(4,1fr);
+          margin: 10px;
+        }
+        #searchoutput > div > a > img{
+          height: 175px;
+        }
+        #searchoutpu{
+          font-size: 20px;
+        }
+      }
+      @media screen and (min-width: 400px) and (max-width: 499px) {
+        #searchoutput{
+          grid-template-columns: repeat(3,1fr);
+          gap: 10px;
+          margin: 10px;
+        }
+        #searchoutput > div > a > img{
+          height: 175px;
+        }
+        #searchoutpu{
+          font-size: 17px;
+        }
+      }
+      @media screen and (min-width: 300px) and (max-width: 399px) {
+        #searchoutput{
+          grid-template-columns: repeat(3,1fr);
+          gap: 10px;
+          margin: 10px;
+        }
+        #searchoutput > div > a > img{
+          height: 150px;
+        }
+        #searchoutpu{
+          font-size: 15px;
+        }
+      }
+      @media screen and (min-width: 50px) and (max-width: 299px) {
+        #searchoutput{
+          grid-template-columns: repeat(3,1fr);
+          gap: 5px;
+          margin: 5px;
+        }
+        #searchoutput > div > a > img{
+          height: 115px;
+        }
+        #searchoutpu{
+          font-size: 14px;
+        }
       }
       @media screen and (min-width: 0px) and (max-width: 999px) {
         #searchbar > input {
@@ -65,7 +153,7 @@
   </head>
   <body>
     <div id="searchbar">
-      <img src="/all images/search icone.svg" />
+      <img src="/search icone.svg" />
       <input
         type="text"
         placeholder="Search for Movies, Shows, Channels etc ..."
@@ -73,14 +161,19 @@
       />
     </div>
     <div id="searchoutput"></div>
+    <div id="searchoutpu"></div>
   </body>
   <script>
     let search = document.getElementById("searchpannel");
+    let contents = document.getElementById("searchoutput");
+    let contaa = document.getElementById("searchoutpu");
     search.addEventListener("keypress", (element) => {
       // event.preventDefault();
       if (element.key === "Enter") {
+        let upperca = search.value;
+        contents.innerHTML = null;
+        contaa.innerHTML = null;
         element.preventDefault();
-        console.log(search.value);
         datafun(search.value);
       }
     });
@@ -92,9 +185,10 @@
           return data.json();
         })
         .then((data) => {
+          let count = "yes";
           for (let a = 0; a < data.length; a++) {
             if (data[a].name == daataa || data[a].subcat == daataa) {
-              console.log(data[a]);
+              count = "no";
               let cont = document.getElementById("searchoutput");
               let div1 = document.createElement("div");
               let link = document.createElement("a");
@@ -105,6 +199,13 @@
               div1.append(link);
               cont.append(div1);
             }
+          }
+          if(count == "yes"){
+            let cont = document.getElementById("searchoutpu");
+            let div1 = document.createElement("div");
+            div1.setAttribute("id","noresulet");
+            div1.innerText = "Oops! No results found for"+ " = " + daataa ;
+            cont.append(div1);
           }
         })
         .catch(() => {});
