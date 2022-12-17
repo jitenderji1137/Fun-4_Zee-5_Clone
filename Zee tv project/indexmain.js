@@ -29,7 +29,7 @@ let slidedata = fetch(
   })
   .catch(() => {});
 function homeslide(data) {
-  for (let a = 0; a < data.length; a++) {
+  for (let a = 0; a <=6 ; a++) {
     if (a === 0) {
       let image = document.getElementById("slideimageone");
       let text = document.getElementById("textone");

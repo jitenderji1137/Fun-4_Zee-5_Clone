@@ -226,6 +226,9 @@ main>div>div{
     #trand>div:nth-child(2){
         height: 240px;
     }
+    .onerightscroll{
+        margin-left: 93%;
+    }
 }
 @media screen and (min-width:0px) and (max-width:999px){
     #sliding{

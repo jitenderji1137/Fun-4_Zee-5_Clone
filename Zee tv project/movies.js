@@ -1,6 +1,57 @@
 function searchbox() {
   location.href = "/search.html";
 }
+let slidedata = fetch(
+  "https://jitenderji1137.github.io/zee5apidata/homepageslidingimage.json"
+)
+  .then((slie) => {
+    return slie.json();
+  })
+  .then((data) => {
+    console.log(data);
+    homeslide(data);
+  })
+  .catch(() => {});
+function homeslide(data) {
+  for (let a = 14; a <=21 ; a++) {
+    if (a === 14) {
+      let image = document.getElementById("slideimageone");
+      let text = document.getElementById("textone");
+      image.setAttribute("src", data[a].img1);
+      text.innerText = data[a].title;
+    } else if (a === 15) {
+      let image1 = document.getElementById("slideimagetwo");
+      let text1 = document.getElementById("texttwo");
+      image1.setAttribute("src", data[a].img1);
+      text1.innerText = data[a].title;
+    } else if (a === 16) {
+      let image2 = document.getElementById("slideimagethree");
+      let text2 = document.getElementById("textthree");
+      image2.setAttribute("src", data[a].img1);
+      text2.innerText = data[a].title;
+    } else if (a === 17) {
+      let image3 = document.getElementById("slideimagefour");
+      let text3 = document.getElementById("textfour");
+      image3.setAttribute("src", data[a].img1);
+      text3.innerText = data[a].title;
+    } else if (a === 18) {
+      let image4 = document.getElementById("slideimagefive");
+      let text4 = document.getElementById("textfive");
+      image4.setAttribute("src", data[a].img1);
+      text4.innerText = data[a].title;
+    } else if (a === 19) {
+      let image5 = document.getElementById("slideimagesix");
+      let text5 = document.getElementById("textsix");
+      image5.setAttribute("src", data[a].img1);
+      text5.innerText = data[a].title;
+    } else if (a === 20) {
+      let image6 = document.getElementById("slideimageseven");
+      let text6 = document.getElementById("textseven");
+      image6.setAttribute("src", data[a].img1);
+      text6.innerText = data[a].title;
+    }
+  }
+}
 let data = fetch("https://jitenderji1137.github.io/zee5apidata/Funapidata.json")
   .then((data) => {
     return data.json();
